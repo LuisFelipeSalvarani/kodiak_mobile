@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kodiak/components/snack_bar.dart';
 import 'package:kodiak/models/user_model.dart';
 import 'package:kodiak/pages/home_page.dart';
 import 'package:kodiak/utils/constants.dart';
@@ -73,7 +75,14 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
 
     if (email.isEmpty || password.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Preencha todos os campos')));
+        buildCustomSnackBar(
+          title: 'Ops!',
+          message: 'Preencha todos os campos',
+          backgroundColor: Colors.red,
+          icon: CupertinoIcons.exclamationmark_triangle_fill,
+          iconColor: Colors.red.shade200,
+        ),
+      );
       return;
     }
 
