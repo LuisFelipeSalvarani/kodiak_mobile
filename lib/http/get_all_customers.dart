@@ -1,22 +1,13 @@
-import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
-import 'package:dio_cookie_manager/dio_cookie_manager.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:kodiak/models/all_customers.dart';
-import 'package:path_provider/path_provider.dart';
+
+import '../utils/dio_client.dart';
 
 Future<AllCustomers> getAllCustomers() async {
-  final apiUrl = dotenv.env['API_URL'] ?? '';
-  final fullUrl = '$apiUrl/customers';
-
-  final Dio dio = Dio();
-
-  var tempDir = await getTemporaryDirectory();
-  var cookieJar = PersistCookieJar(storage: FileStorage(tempDir.path));
-  dio.interceptors.add(CookieManager(cookieJar));
+  final Dio dio = await DioClient.getInstance();
 
   try {
-    final response = await dio.get(fullUrl);
+    final response = await dio.get('/customers');
 
     if (response.statusCode == 200) {
       return AllCustomers.fromJson(response.data);

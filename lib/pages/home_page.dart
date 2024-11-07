@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kodiak/http/logout.dart';
 import 'package:kodiak/pages/costumer_page/costumer_page.dart';
+import 'package:kodiak/pages/login_page.dart';
 import 'package:kodiak/pages/sales_page/sales_page.dart';
 import 'package:kodiak/providers/user_provider.dart';
 import 'package:kodiak/utils/constants.dart';
@@ -48,7 +50,27 @@ class HomePage extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: InkWell(
-                onTap: () {},
+                onTap: () async {
+                  try {
+                    await logout();
+
+                    Provider.of<UserProvider>(context, listen: false)
+                        .clearUser();
+
+                    Navigator.pushReplacement(
+                        context,
+                        PageTransition(
+                            type: PageTransitionType.size,
+                            alignment: Alignment.center,
+                            duration: const Duration(milliseconds: 300),
+                            child: const LoginPage(),
+                            curve: Curves.easeInOut));
+                  } catch (e) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Erro ao fazer logout: $e')),
+                    );
+                  }
+                },
                 borderRadius: BorderRadius.circular(8),
                 child: const Padding(
                   padding: EdgeInsets.all(8),
