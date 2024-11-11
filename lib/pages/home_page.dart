@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:kodiak/http/logout.dart';
 import 'package:kodiak/pages/costumer_page/costumer_page.dart';
 import 'package:kodiak/pages/login_page.dart';
+import 'package:kodiak/pages/products_page/products_page.dart';
 import 'package:kodiak/pages/sales_page/sales_page.dart';
 import 'package:kodiak/providers/user_provider.dart';
 import 'package:kodiak/utils/constants.dart';
@@ -172,7 +173,17 @@ class HomePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     buildSquareButton(CupertinoIcons.bag_fill, 'Vendas', () {}),
-                    buildSquareButton(CupertinoIcons.bag_fill, 'Vendas', () {})
+                    buildSquareButton(CupertinoIcons.cube_box_fill, 'Produtos',
+                        () {
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              type: PageTransitionType.size,
+                              alignment: Alignment.center,
+                              duration: const Duration(milliseconds: 300),
+                              child: const ProductsPage(),
+                              curve: Curves.easeInOut));
+                    })
                   ],
                 ),
               ),
