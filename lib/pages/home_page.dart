@@ -10,6 +10,8 @@ import 'package:kodiak/utils/constants.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
+import '../components/square_button.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -202,52 +204,4 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-}
-
-Widget buildSquareButton(IconData icon, String label, VoidCallback onPressed) {
-  return Expanded(
-    child: AspectRatio(
-      aspectRatio: 1,
-      child: GestureDetector(
-        onTap: onPressed,
-        child: Container(
-          margin: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    Color(darkBlue),
-                    Color(lightBlue),
-                  ]),
-              color: const Color(darkBlue),
-              borderRadius: BorderRadius.circular(15),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black.withOpacity(0.3),
-                    spreadRadius: 2,
-                    blurRadius: 8,
-                    offset: const Offset(0, 5))
-              ]),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                icon,
-                size: 80,
-                color: const Color(white),
-              ),
-              const SizedBox(
-                height: 4,
-              ),
-              Text(
-                label,
-                style: const TextStyle(color: Color(white), fontSize: 24),
-              )
-            ],
-          ),
-        ),
-      ),
-    ),
-  );
 }
