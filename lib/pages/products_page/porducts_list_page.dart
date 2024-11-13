@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:kodiak/http/get_all_product_groups.dart';
 import 'package:kodiak/http/get_all_products.dart';
 import 'package:kodiak/models/all_products.dart';
-import 'package:kodiak/pages/products_page/product_info_page.dart';
+import 'package:kodiak/pages/products_page/products_general_page/product_general_page.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../../components/options.dart';
@@ -176,7 +176,7 @@ class _ProductsListPageState extends State<ProductsListPage> {
                               type: PageTransitionType.size,
                               alignment: Alignment.center,
                               duration: const Duration(milliseconds: 300),
-                              child: const ProductInfoPage(),
+                              child: const ProductGeneralPage(),
                               curve: Curves.easeInOut));
                     },
                   ),

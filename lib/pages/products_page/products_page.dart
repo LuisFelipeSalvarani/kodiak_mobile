@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kodiak/components/app_bar.dart';
 import 'package:kodiak/pages/products_page/porducts_list_page.dart';
-import 'package:kodiak/pages/products_page/product_info_page.dart';
+import 'package:kodiak/pages/products_page/products_general_page/product_general_page.dart';
 
 import '../../utils/constants.dart';
 
@@ -36,7 +36,7 @@ class _ProductsPageState extends State<ProductsPage> {
               Expanded(
                 child: TabBarView(
                   children: [
-                    ProductInfoPage(),
+                    ProductGeneralPage(),
                     ProductsListPage(),
                   ],
                 ),
