@@ -31,7 +31,8 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
   void initState() {
     super.initState();
 
-    _loginAnimationController = AnimationController(vsync: this);
+    _loginAnimationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
 
     _loginAnimationController.addListener(() {
       if (_loginAnimationController.value > 0.7) {
