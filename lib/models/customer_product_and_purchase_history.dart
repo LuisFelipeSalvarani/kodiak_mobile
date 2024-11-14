@@ -77,15 +77,3 @@ class CustomerHistory {
     );
   }
 }
-
-// class CustomerHistoryResponse {
-//   final CustomerHistory customerHistory;
-//
-//   CustomerHistoryResponse({required this.customerHistory});
-//
-//   factory CustomerHistoryResponse.fromJson(Map<String, dynamic> json) {
-//     return CustomerHistoryResponse(
-//       customerHistory: CustomerHistory.fromJson(json['customerHistory']),
-//     );
-//   }
-// }

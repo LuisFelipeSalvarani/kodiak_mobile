@@ -176,7 +176,7 @@ class _ProductsListPageState extends State<ProductsListPage> {
                               type: PageTransitionType.size,
                               alignment: Alignment.center,
                               duration: const Duration(milliseconds: 300),
-                              child: const ProductPage(),
+                              child: ProductPage(idProduct: product.idProduct),
                               curve: Curves.easeInOut));
                     },
                   ),
