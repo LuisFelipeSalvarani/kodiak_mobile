@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:kodiak/http/get_all_product_groups.dart';
 import 'package:kodiak/http/get_all_products.dart';
 import 'package:kodiak/models/all_products.dart';
-import 'package:kodiak/pages/products_page/products_general_page/product_general_page.dart';
+import 'package:kodiak/pages/products_page/product_page/product_page.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../../components/options.dart';
@@ -14,7 +14,7 @@ class ProductsListPage extends StatefulWidget {
   const ProductsListPage({super.key});
 
   @override
-  _ProductsListPageState createState() => _ProductsListPageState();
+  State<ProductsListPage> createState() => _ProductsListPageState();
 }
 
 class _ProductsListPageState extends State<ProductsListPage> {
@@ -176,7 +176,7 @@ class _ProductsListPageState extends State<ProductsListPage> {
                               type: PageTransitionType.size,
                               alignment: Alignment.center,
                               duration: const Duration(milliseconds: 300),
-                              child: const ProductGeneralPage(),
+                              child: const ProductPage(),
                               curve: Curves.easeInOut));
                     },
                   ),

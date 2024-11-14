@@ -11,7 +11,7 @@ class CostumerPage extends StatefulWidget {
   const CostumerPage({super.key});
 
   @override
-  _CostumerPageState createState() => _CostumerPageState();
+  State<CostumerPage> createState() => _CostumerPageState();
 }
 
 class _CostumerPageState extends State<CostumerPage> {

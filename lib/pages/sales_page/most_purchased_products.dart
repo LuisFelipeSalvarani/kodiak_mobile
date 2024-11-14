@@ -8,7 +8,7 @@ class MostPurchasedProducts extends StatefulWidget {
   const MostPurchasedProducts({super.key});
 
   @override
-  _MostPurchasedProductsState createState() => _MostPurchasedProductsState();
+  State<MostPurchasedProducts> createState() => _MostPurchasedProductsState();
 }
 
 class _MostPurchasedProductsState extends State<MostPurchasedProducts> {
