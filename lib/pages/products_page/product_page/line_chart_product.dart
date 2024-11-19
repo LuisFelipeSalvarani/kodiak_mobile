@@ -144,7 +144,7 @@ class _LineChartProductState extends State<LineChartProduct> {
     final tooltipsOnBar = lineBarsData[0];
 
     return AspectRatio(
-      aspectRatio: 2.5,
+      aspectRatio: 1.5,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 10.0),
         child: LayoutBuilder(
@@ -163,6 +163,8 @@ class _LineChartProductState extends State<LineChartProduct> {
                   enabled: true,
                   handleBuiltInTouches: false,
                   touchTooltipData: LineTouchTooltipData(
+                    tooltipPadding: const EdgeInsets.symmetric(horizontal: 8),
+                    getTooltipColor: (spot) => Color(darkBlue).withOpacity(0.9),
                     getTooltipItems: (touchedSpots) {
                       return touchedSpots.map(
                         (spot) {
@@ -183,7 +185,7 @@ class _LineChartProductState extends State<LineChartProduct> {
                 maxY: maxYValue,
                 titlesData: FlTitlesData(
                   leftTitles: const AxisTitles(
-                    axisNameWidget: Text('Count'),
+                    axisNameWidget: Text(''),
                     axisNameSize: 24.0,
                     sideTitles: SideTitles(
                       showTitles: false,
@@ -205,7 +207,14 @@ class _LineChartProductState extends State<LineChartProduct> {
                     ),
                   ),
                   rightTitles: const AxisTitles(
-                    axisNameWidget: Text('Vendas'),
+                    axisNameWidget: Text(
+                      'Quantidade',
+                      style: TextStyle(
+                        color: Color(darkBlue),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
                     sideTitles: SideTitles(
                       showTitles: false,
                       reservedSize: 0,
@@ -214,9 +223,13 @@ class _LineChartProductState extends State<LineChartProduct> {
                   topTitles: const AxisTitles(
                     axisNameWidget: Text(
                       'Vendas por mês',
-                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        color: Color(darkBlue),
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
-                    axisNameSize: 24,
+                    axisNameSize: 32,
                     sideTitles: SideTitles(
                       showTitles: true,
                       reservedSize: 0,
