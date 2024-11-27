@@ -55,6 +55,7 @@ class _ProductsListPageState extends State<ProductsListPage> {
   @override
   void dispose() {
     super.dispose();
+    _searchController.dispose();
   }
 
   @override

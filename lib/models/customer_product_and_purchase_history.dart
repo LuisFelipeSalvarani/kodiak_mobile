@@ -50,6 +50,8 @@ class LastPurchases {
 class CustomerHistory {
   final int idCustomer;
   final String companyName;
+  final String dayThatBuysTheMost;
+  final String weekThatBuysTheMost;
   final List<TopProducts> topProducts;
   final List<LastPurchases> lastPurchases;
   final String totalLastPurchases;
@@ -57,6 +59,8 @@ class CustomerHistory {
   CustomerHistory({
     required this.idCustomer,
     required this.companyName,
+    required this.dayThatBuysTheMost,
+    required this.weekThatBuysTheMost,
     required this.topProducts,
     required this.lastPurchases,
     required this.totalLastPurchases,
@@ -67,6 +71,8 @@ class CustomerHistory {
     return CustomerHistory(
       idCustomer: customerHistory['idCustomer'],
       companyName: customerHistory['companyName'],
+      dayThatBuysTheMost: customerHistory['dayThatBuysTheMost'],
+      weekThatBuysTheMost: customerHistory['weekThatBuysTheMost'],
       topProducts: (customerHistory['topProducts'] as List)
           .map((item) => TopProducts.fromJson(item))
           .toList(),

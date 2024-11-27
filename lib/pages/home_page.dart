@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kodiak/http/logout.dart';
+import 'package:kodiak/pages/calculator_page/calculator_page.dart';
 import 'package:kodiak/pages/costumer_page/costumer_page.dart';
 import 'package:kodiak/pages/login_page.dart';
 import 'package:kodiak/pages/products_page/products_page.dart';
@@ -148,24 +149,26 @@ class HomePage extends StatelessWidget {
                   children: [
                     buildSquareButton(CupertinoIcons.bag_fill, 'Vendas', () {
                       Navigator.push(
-                          context,
-                          PageTransition(
-                              type: PageTransitionType.size,
-                              alignment: Alignment.center,
-                              duration: const Duration(milliseconds: 300),
-                              child: const SalesPage(),
-                              curve: Curves.easeInOut));
+                        context,
+                        PageTransition(
+                            type: PageTransitionType.size,
+                            alignment: Alignment.center,
+                            duration: const Duration(milliseconds: 300),
+                            child: const SalesPage(),
+                            curve: Curves.easeInOut),
+                      );
                     }),
                     buildSquareButton(CupertinoIcons.person_2_alt, 'Clientes',
                         () {
                       Navigator.push(
-                          context,
-                          PageTransition(
-                              type: PageTransitionType.size,
-                              alignment: Alignment.center,
-                              duration: const Duration(milliseconds: 300),
-                              child: const CostumerPage(),
-                              curve: Curves.easeInOut));
+                        context,
+                        PageTransition(
+                            type: PageTransitionType.size,
+                            alignment: Alignment.center,
+                            duration: const Duration(milliseconds: 300),
+                            child: const CostumerPage(),
+                            curve: Curves.easeInOut),
+                      );
                     })
                   ],
                 ),
@@ -174,17 +177,29 @@ class HomePage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    buildSquareButton(CupertinoIcons.bag_fill, 'Vendas', () {}),
+                    buildSquareButton(
+                        CupertinoIcons.square_grid_2x2_fill, 'Calculadora', () {
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                            type: PageTransitionType.size,
+                            alignment: Alignment.center,
+                            duration: const Duration(milliseconds: 300),
+                            child: const CalculatorPage(),
+                            curve: Curves.easeInOut),
+                      );
+                    }),
                     buildSquareButton(CupertinoIcons.cube_box_fill, 'Produtos',
                         () {
                       Navigator.push(
-                          context,
-                          PageTransition(
-                              type: PageTransitionType.size,
-                              alignment: Alignment.center,
-                              duration: const Duration(milliseconds: 300),
-                              child: const ProductsPage(),
-                              curve: Curves.easeInOut));
+                        context,
+                        PageTransition(
+                            type: PageTransitionType.size,
+                            alignment: Alignment.center,
+                            duration: const Duration(milliseconds: 300),
+                            child: const ProductsPage(),
+                            curve: Curves.easeInOut),
+                      );
                     })
                   ],
                 ),
