@@ -50,8 +50,8 @@ class LastPurchases {
 class CustomerHistory {
   final int idCustomer;
   final String companyName;
-  final String dayThatBuysTheMost;
-  final String weekThatBuysTheMost;
+  final int dayThatBuysTheMost;
+  final int weekThatBuysTheMost;
   final List<TopProducts> topProducts;
   final List<LastPurchases> lastPurchases;
   final String totalLastPurchases;

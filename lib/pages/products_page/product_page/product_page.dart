@@ -145,7 +145,7 @@ class _ProductPageState extends State<ProductPage> {
             indent: 32,
             endIndent: 32,
           ),
-          Text(
+          const Text(
             'Top Compradores',
             style: TextStyle(
                 color: Color(darkBlue),

@@ -163,11 +163,12 @@ class HomePage extends StatelessWidget {
                       Navigator.push(
                         context,
                         PageTransition(
-                            type: PageTransitionType.size,
-                            alignment: Alignment.center,
-                            duration: const Duration(milliseconds: 300),
-                            child: const CostumerPage(),
-                            curve: Curves.easeInOut),
+                          type: PageTransitionType.size,
+                          alignment: Alignment.center,
+                          duration: const Duration(milliseconds: 300),
+                          child: const CostumerPage(),
+                          curve: Curves.easeInOut,
+                        ),
                       );
                     })
                   ],
