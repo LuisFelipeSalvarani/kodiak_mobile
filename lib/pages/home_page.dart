@@ -209,8 +209,10 @@ class HomePage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    buildSquareButton(CupertinoIcons.bag_fill, 'Vendas', () {}),
-                    buildSquareButton(CupertinoIcons.bag_fill, 'Vendas', () {})
+                    buildSquareButton(
+                        CupertinoIcons.square_list, 'Tarefas', () {}),
+                    buildSquareButton(
+                        CupertinoIcons.graph_square, 'Previsões', () {})
                   ],
                 ),
               )
